@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbpj6xn5705lg"]
+
+[ext_resource type="PackedScene" uid="uid://dtkbikbjojebd" path="res://characters/character.tscn" id="1_1kj5h"]
+[ext_resource type="Script" path="res://player/player.gd" id="2_asx5o"]
+[ext_resource type="Texture2D" uid="uid://bbnfme8x3mnvx" path="res://assets/textures/characters/coach_spritesheet.png" id="3_ricvx"]
+[ext_resource type="AudioStream" uid="uid://c5br06827x81k" path="res://assets/audio/footsteps_sneakers/sneaker_steps1.wav" id="4_jid57"]
+[ext_resource type="AudioStream" uid="uid://bjsi6v6jdtiot" path="res://assets/audio/footsteps_sneakers/sneaker_steps2.wav" id="5_0cqvt"]
+[ext_resource type="AudioStream" uid="uid://df3bqi541ykcu" path="res://assets/audio/footsteps_sneakers/sneaker_steps3.wav" id="6_k83e2"]
+[ext_resource type="AudioStream" uid="uid://c0yuhdlsfbtva" path="res://assets/audio/footsteps_sneakers/sneaker_steps4.wav" id="7_ifhu4"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0n1gg"]
+streams_count = 4
+stream_0/stream = ExtResource("4_jid57")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_0cqvt")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_k83e2")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("7_ifhu4")
+stream_3/weight = 1.0
+
+[node name="Player" instance=ExtResource("1_1kj5h")]
+position = Vector2(-1, -1)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_asx5o")
+
+[node name="Spritesheet" parent="." index="1"]
+texture = ExtResource("3_ricvx")
+
+[node name="FootstepsPlayer" type="AudioStreamPlayer" parent="." index="6"]
+stream = SubResource("AudioStreamRandomizer_0n1gg")
+bus = &"sfx"
+
+[node name="FootstepDelay" type="Timer" parent="." index="7"]
+wait_time = 0.26
+one_shot = true

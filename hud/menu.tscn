@@ -1,0 +1,157 @@
+[gd_scene load_steps=14 format=3 uid="uid://q13bs6ecawdo"]
+
+[ext_resource type="Texture2D" uid="uid://c42b7qf5bgvxu" path="res://assets/ui/Modern_UI_Style_1_32x32.png" id="1_jt3kg"]
+[ext_resource type="Script" path="res://hud/menu.gd" id="1_rwbxm"]
+[ext_resource type="FontFile" uid="uid://cpay5v3c8knrb" path="res://assets/fonts/Tokino Kun.ttf" id="2_wu0fi"]
+[ext_resource type="FontFile" uid="uid://c6irlwty7tcfx" path="res://assets/fonts/arialbd.ttf" id="3_m8f6m"]
+[ext_resource type="Texture2D" uid="uid://tr8syiwvsshi" path="res://assets/ui/Modern_UI_Style_2_32x32.png" id="5_0no6r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0guhe"]
+atlas = ExtResource("1_jt3kg")
+region = Rect2(16, 16, 64, 62)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qag2y"]
+font = ExtResource("2_wu0fi")
+font_size = 32
+outline_size = 5
+outline_color = Color(0.631373, 0.498039, 0.364706, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wikvs"]
+atlas = ExtResource("1_jt3kg")
+region = Rect2(26, 122, 44, 44)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l0mbk"]
+font = ExtResource("3_m8f6m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_urb66"]
+font = ExtResource("3_m8f6m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_uh7l4"]
+font = ExtResource("3_m8f6m")
+font_size = 10
+outline_size = 4
+outline_color = Color(0.521569, 0.521569, 0.521569, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8tbh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2equ"]
+atlas = ExtResource("5_0no6r")
+region = Rect2(928, 32, 32, 32)
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_rwbxm")
+
+[node name="MenuRect" type="NinePatchRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -86.0
+offset_right = 133.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_0guhe")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Label" type="Label" parent="MenuRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 241.0
+offset_bottom = 60.0
+text = "FitLife (Prototype)"
+label_settings = SubResource("LabelSettings_qag2y")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MenuRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 58.0
+offset_right = 236.0
+offset_bottom = 142.0
+texture = SubResource("AtlasTexture_wikvs")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="MenuRect/NinePatchRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 54.0
+offset_bottom = 35.0
+text = "Music
+"
+label_settings = SubResource("LabelSettings_l0mbk")
+
+[node name="MusicSlider" type="HSlider" parent="MenuRect/NinePatchRect"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 26.0
+offset_right = 198.0
+offset_bottom = 42.0
+max_value = 1.0
+step = 0.001
+value = 0.8
+
+[node name="Label2" type="Label" parent="MenuRect/NinePatchRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 47.0
+offset_right = 58.0
+offset_bottom = 70.0
+text = "Sound"
+label_settings = SubResource("LabelSettings_urb66")
+
+[node name="SFXSlider" type="HSlider" parent="MenuRect/NinePatchRect"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 65.0
+offset_right = 198.0
+offset_bottom = 81.0
+max_value = 1.0
+step = 0.001
+value = 0.8
+
+[node name="Button" type="Button" parent="MenuRect"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 144.0
+offset_right = 236.0
+offset_bottom = 157.0
+
+[node name="Label2" type="Label" parent="MenuRect/Button"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 91.0
+offset_bottom = 26.0
+text = "Restart Game"
+label_settings = SubResource("LabelSettings_uh7l4")
+
+[node name="OpenMenuButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n8tbh")
+
+[node name="TextureRect" type="TextureRect" parent="OpenMenuButton"]
+layout_mode = 0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = SubResource("AtlasTexture_f2equ")
+
+[connection signal="drag_ended" from="MenuRect/NinePatchRect/MusicSlider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="drag_ended" from="MenuRect/NinePatchRect/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="pressed" from="MenuRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="OpenMenuButton" to="." method="_on_open_menu_button_pressed"]

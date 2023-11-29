@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc8dxum66qnjp"]
+
+[ext_resource type="Script" path="res://Interactables/Interactable.gd" id="1_04d2k"]
+
+[node name="Interactable" type="Node2D" groups=["interactables"]]
+script = ExtResource("1_04d2k")
+
+[node name="BodyMarker" type="Marker2D" parent="."]

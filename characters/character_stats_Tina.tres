@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=3 format=3 uid="uid://2cnu3vh78dlq"]
+
+[ext_resource type="Script" path="res://characters/character_stats.gd" id="1_d7vsf"]
+[ext_resource type="Texture2D" uid="uid://dcxohc1bv587d" path="res://assets/textures/characters/tina_portrait.png" id="1_ql1e5"]
+
+[resource]
+script = ExtResource("1_d7vsf")
+name = "Tina"
+gender = 1
+age = 24
+weight = 120
+motivation = 2
+fitness_experience = 30
+image = ExtResource("1_ql1e5")
+target_weight = 20

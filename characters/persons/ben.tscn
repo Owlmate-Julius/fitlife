@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://gxpdhl23eyiy"]
+
+[ext_resource type="PackedScene" uid="uid://dtkbikbjojebd" path="res://characters/character.tscn" id="1_wmaba"]
+[ext_resource type="Texture2D" uid="uid://cim826uw8bwkr" path="res://assets/textures/characters/char3.png" id="2_0bjwg"]
+
+[node name="Ben" instance=ExtResource("1_wmaba")]
+
+[node name="Spritesheet" parent="." index="1"]
+texture = ExtResource("2_0bjwg")

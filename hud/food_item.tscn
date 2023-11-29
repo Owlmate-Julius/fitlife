@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://bs73ab3e6kjth"]
+
+[ext_resource type="Texture2D" uid="uid://c42b7qf5bgvxu" path="res://assets/ui/Modern_UI_Style_1_32x32.png" id="1_ootlq"]
+[ext_resource type="Texture2D" uid="uid://bjonqxr5jo8ge" path="res://assets/textures/food/breakfast.png" id="2_3nly4"]
+[ext_resource type="Script" path="res://hud/food_item.gd" id="2_xpom8"]
+[ext_resource type="FontFile" uid="uid://cpay5v3c8knrb" path="res://assets/fonts/Tokino Kun.ttf" id="3_xiglc"]
+[ext_resource type="FontFile" uid="uid://c6irlwty7tcfx" path="res://assets/fonts/arialbd.ttf" id="4_jn8l2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phfwd"]
+atlas = ExtResource("1_ootlq")
+region = Rect2(122, 416, 44, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taycd"]
+atlas = ExtResource("1_ootlq")
+region = Rect2(116, 338, 56, 58)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v1gh8"]
+font = ExtResource("3_xiglc")
+font_size = 20
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.423529)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0lyc0"]
+line_spacing = -2.0
+font = ExtResource("4_jn8l2")
+font_size = 12
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7s86t"]
+font = ExtResource("4_jn8l2")
+font_size = 14
+font_color = Color(0.486275, 0.639216, 0.47451, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="FoodItem" type="NinePatchRect"]
+custom_minimum_size = Vector2(250, 64)
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 272.0
+offset_bottom = 86.0
+texture = SubResource("AtlasTexture_phfwd")
+patch_margin_left = 2
+patch_margin_right = 2
+script = ExtResource("2_xpom8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 61.0
+offset_bottom = 60.0
+texture = SubResource("AtlasTexture_taycd")
+patch_margin_left = 10
+patch_margin_top = 12
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="FoodIcon" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 11.0
+offset_right = 43.0
+offset_bottom = 46.0
+texture = ExtResource("2_3nly4")
+expand_mode = 1
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 20.0
+offset_right = 246.0
+offset_bottom = 44.0
+
+[node name="Foodname" type="Label" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_right = 147.0
+offset_bottom = 28.0
+text = "Breakfast"
+label_settings = SubResource("LabelSettings_v1gh8")
+
+[node name="FoodDescription" type="Label" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 21.0
+offset_right = 217.0
+offset_bottom = 55.0
+text = "delicious Breakfast with eggs"
+label_settings = SubResource("LabelSettings_0lyc0")
+autowrap_mode = 2
+
+[node name="Kcal" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -78.0
+offset_bottom = 26.0
+grow_horizontal = 0
+text = "750 Kcal."
+label_settings = SubResource("LabelSettings_7s86t")
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn82x6ejyu47h"]
+
+[ext_resource type="PackedScene" uid="uid://dtkbikbjojebd" path="res://characters/character.tscn" id="1_gfcvd"]
+[ext_resource type="Texture2D" uid="uid://by86xa46yck05" path="res://assets/textures/characters/char1.png" id="2_t3udw"]
+
+[node name="Selina" instance=ExtResource("1_gfcvd")]
+
+[node name="Spritesheet" parent="." index="1"]
+texture = ExtResource("2_t3udw")

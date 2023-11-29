@@ -1,0 +1,412 @@
+[gd_scene load_steps=29 format=3 uid="uid://b0t1rmijoefs6"]
+
+[ext_resource type="Texture2D" uid="uid://c42b7qf5bgvxu" path="res://assets/ui/Modern_UI_Style_1_32x32.png" id="1_0xavl"]
+[ext_resource type="Script" path="res://hud/foodplan.gd" id="1_pryfo"]
+[ext_resource type="PackedScene" uid="uid://bs73ab3e6kjth" path="res://hud/food_item.tscn" id="2_322ny"]
+[ext_resource type="Texture2D" uid="uid://d1mhbaw7p1q2n" path="res://assets/textures/food/chicken_fries.png" id="3_q3gxa"]
+[ext_resource type="FontFile" uid="uid://c6irlwty7tcfx" path="res://assets/fonts/arialbd.ttf" id="4_8yo11"]
+[ext_resource type="Texture2D" uid="uid://c2q0amkeeagwl" path="res://assets/textures/food/Pastrami_Sandwich.png" id="4_awh0g"]
+[ext_resource type="Texture2D" uid="uid://ba785uajxheg1" path="res://assets/textures/food/sushi.png" id="5_y120e"]
+[ext_resource type="Texture2D" uid="uid://wl40yfgw1786" path="res://assets/textures/hud/progress_top-down.png" id="6_ksawh"]
+[ext_resource type="Texture2D" uid="uid://dpashjbgi4tke" path="res://assets/textures/food/tomato_soup.png" id="7_nwtsq"]
+[ext_resource type="Texture2D" uid="uid://cdr02xjcbgvvi" path="res://assets/textures/food/toast_jam.png" id="8_27jaq"]
+[ext_resource type="Texture2D" uid="uid://rpo3u3o2mqdn" path="res://assets/textures/food/veggi_salad.png" id="9_yfpow"]
+[ext_resource type="Texture2D" uid="uid://dj4bcr2gwkehf" path="res://assets/textures/food/watermelon_slices.png" id="10_sj12w"]
+[ext_resource type="Texture2D" uid="uid://bwaw4t6qmot7g" path="res://assets/textures/food/yogurt_banana.png" id="11_e2rnq"]
+[ext_resource type="Texture2D" uid="uid://2wtc82uugt57" path="res://assets/textures/food/french_fries.png" id="12_unxe1"]
+[ext_resource type="Texture2D" uid="uid://dd86m2lg0mri" path="res://assets/textures/food/pasta_backed.png" id="13_v2yal"]
+[ext_resource type="Texture2D" uid="uid://d2ljfb14m646r" path="res://assets/textures/food/fruit_shake.png" id="14_w1h5s"]
+[ext_resource type="AudioStream" uid="uid://iy7b3nswunid" path="res://assets/audio/menu_click.ogg" id="17_ejcvw"]
+[ext_resource type="AudioStream" uid="uid://bwi1w0j5r6faa" path="res://assets/audio/checkbox.wav" id="18_twx4e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qsx2"]
+atlas = ExtResource("1_0xavl")
+region = Rect2(16, 16, 64, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb4r3"]
+atlas = ExtResource("1_0xavl")
+region = Rect2(16, 16, 64, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq86e"]
+atlas = ExtResource("1_0xavl")
+region = Rect2(122, 416, 44, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np1m0"]
+atlas = ExtResource("6_ksawh")
+region = Rect2(1, 2, 14, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlixg"]
+atlas = ExtResource("6_ksawh")
+region = Rect2(32, 2, 16, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bflu"]
+atlas = ExtResource("6_ksawh")
+region = Rect2(17, 2, 14, 76)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ilxqn"]
+font = ExtResource("4_8yo11")
+font_size = 8
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxa3f"]
+atlas = ExtResource("1_0xavl")
+region = Rect2(1176, 384, 48, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6mjct"]
+font = ExtResource("4_8yo11")
+font_color = Color(0.435294, 0.631373, 0.415686, 1)
+outline_size = 8
+outline_color = Color(0.137255, 0.137255, 0.137255, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_axgh2"]
+font = ExtResource("4_8yo11")
+font_size = 8
+font_color = Color(0.619608, 0.396078, 0.396078, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Foodplan" type="CanvasLayer"]
+script = ExtResource("1_pryfo")
+
+[node name="FoodplanContainer" type="NinePatchRect" parent="."]
+offset_left = 14.0
+offset_top = 16.0
+offset_right = 310.0
+offset_bottom = 249.0
+texture = SubResource("AtlasTexture_0qsx2")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="FoodplanContainer"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 17.0
+offset_top = 16.0
+offset_right = 280.0
+offset_bottom = 222.0
+
+[node name="FoodItemContainer" type="VBoxContainer" parent="FoodplanContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Breakfast" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="Yogurt" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="FoodIcon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Yogurt/NinePatchRect" index="0"]
+texture = ExtResource("11_e2rnq")
+
+[node name="Foodname" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Yogurt" index="2"]
+text = "Yogurt Banana"
+
+[node name="FoodDescription" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Yogurt" index="3"]
+text = "Creamy fusion of banana bliss."
+
+[node name="Kcal" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Yogurt" index="4"]
+offset_left = -66.0
+text = "250 Kcal."
+
+[node name="Chicken" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="FoodIcon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Chicken/NinePatchRect" index="0"]
+texture = ExtResource("3_q3gxa")
+
+[node name="Foodname" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Chicken" index="2"]
+text = "Fried  Chicken"
+
+[node name="FoodDescription" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Chicken" index="3"]
+text = "Crispy indulgence, golden and succulent."
+
+[node name="Kcal" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Chicken" index="4"]
+offset_left = -64.0
+text = "900 Kcal."
+
+[node name="Pastrami" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="FoodIcon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Pastrami/NinePatchRect" index="0"]
+texture = ExtResource("4_awh0g")
+
+[node name="Foodname" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Pastrami" index="2"]
+text = "Pastrami"
+
+[node name="FoodDescription" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Pastrami" index="3"]
+text = "Savory layers in every bite, deli delight."
+
+[node name="Kcal" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Pastrami" index="4"]
+offset_left = -65.0
+text = "850 Kcal."
+
+[node name="Sushi" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="FoodIcon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Sushi/NinePatchRect" index="0"]
+texture = ExtResource("5_y120e")
+
+[node name="Foodname" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Sushi" index="2"]
+text = "Sushi"
+
+[node name="FoodDescription" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Sushi" index="3"]
+text = "Japanese Sushi."
+
+[node name="Kcal" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Sushi" index="4"]
+offset_left = -66.0
+text = "500 Kcal."
+
+[node name="Soup" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="FoodIcon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Soup/NinePatchRect" index="0"]
+texture = ExtResource("7_nwtsq")
+
+[node name="Foodname" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Soup" index="2"]
+text = "Tomato Soup"
+
+[node name="FoodDescription" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Soup" index="3"]
+text = "Warm bowl of tomatoey goodness."
+
+[node name="Kcal" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Soup" index="4"]
+offset_left = -62.0
+text = "250 Kcal."
+
+[node name="Toast" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="FoodIcon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Toast/NinePatchRect" index="0"]
+texture = ExtResource("8_27jaq")
+
+[node name="Foodname" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Toast" index="2"]
+text = "Toast Jam"
+
+[node name="FoodDescription" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Toast" index="3"]
+text = "Classic comfort, a sweet morning hug."
+
+[node name="Kcal" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Toast" index="4"]
+offset_left = -63.0
+text = "200 Kcal."
+
+[node name="Salad" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="FoodIcon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Salad/NinePatchRect" index="0"]
+texture = ExtResource("9_yfpow")
+
+[node name="Foodname" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Salad" index="2"]
+text = "Veggie Salad"
+
+[node name="FoodDescription" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Salad" index="3"]
+text = "Fresh, crunchy medley of garden delights."
+
+[node name="Kcal" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Salad" index="4"]
+offset_left = -65.0
+text = "350 Kcal."
+
+[node name="Melon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="FoodIcon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Melon/NinePatchRect" index="0"]
+texture = ExtResource("10_sj12w")
+
+[node name="Foodname" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Melon" index="2"]
+text = "Melon Slices"
+
+[node name="FoodDescription" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Melon" index="3"]
+text = "Juicy, hydrating summer sweetness."
+
+[node name="Kcal" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Melon" index="4"]
+offset_left = -64.0
+text = "100 Kcal."
+
+[node name="Fries" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="FoodIcon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Fries/NinePatchRect" index="0"]
+texture = ExtResource("12_unxe1")
+
+[node name="Foodname" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Fries" index="2"]
+text = "Frensh Fries"
+
+[node name="FoodDescription" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Fries" index="3"]
+text = "Unhealthy, thin, crispy spuds."
+
+[node name="Kcal" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Fries" index="4"]
+offset_left = -64.0
+text = "400 Kcal."
+
+[node name="BakedPasta" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="FoodIcon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/BakedPasta/NinePatchRect" index="0"]
+texture = ExtResource("13_v2yal")
+
+[node name="Foodname" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/BakedPasta" index="2"]
+text = "Pasta Backed"
+
+[node name="FoodDescription" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/BakedPasta" index="3"]
+text = "Oven-baked pasta, gooey and satisfying."
+
+[node name="Kcal" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/BakedPasta" index="4"]
+offset_left = -64.0
+text = "600 Kcal."
+
+[node name="Shake" parent="FoodplanContainer/ScrollContainer/FoodItemContainer" instance=ExtResource("2_322ny")]
+layout_mode = 2
+
+[node name="FoodIcon" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Shake/NinePatchRect" index="0"]
+texture = ExtResource("14_w1h5s")
+
+[node name="Foodname" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Shake" index="2"]
+text = "Fruitshake"
+
+[node name="FoodDescription" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Shake" index="3"]
+text = "Vibrant blend of fruity refreshment."
+
+[node name="Kcal" parent="FoodplanContainer/ScrollContainer/FoodItemContainer/Shake" index="4"]
+offset_left = -64.0
+text = "300 Kcal."
+
+[node name="InfoContainer" type="NinePatchRect" parent="."]
+offset_left = 326.0
+offset_top = 16.0
+offset_right = 458.0
+offset_bottom = 245.0
+texture = SubResource("AtlasTexture_kb4r3")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="CaloriesInfo" type="Control" parent="InfoContainer"]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 18.0
+offset_right = 110.0
+offset_bottom = 96.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="InfoContainer/CaloriesInfo"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 1.0
+offset_right = 69.0
+offset_bottom = 49.0
+texture = SubResource("AtlasTexture_iq86e")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="KcalProgress" type="TextureProgressBar" parent="InfoContainer/CaloriesInfo"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 16.0
+offset_bottom = 77.0
+max_value = 4000.0
+fill_mode = 3
+texture_under = SubResource("AtlasTexture_np1m0")
+texture_over = SubResource("AtlasTexture_jlixg")
+texture_progress = SubResource("AtlasTexture_4bflu")
+
+[node name="Label" type="Label" parent="InfoContainer/CaloriesInfo/KcalProgress"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 18.0
+offset_right = 79.0
+offset_bottom = 31.0
+text = "keep kcal."
+label_settings = SubResource("LabelSettings_ilxqn")
+
+[node name="Label2" type="Label" parent="InfoContainer/CaloriesInfo/KcalProgress"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 1.0
+offset_right = 79.0
+offset_bottom = 14.0
+text = "higher kcal."
+label_settings = SubResource("LabelSettings_ilxqn")
+
+[node name="Label3" type="Label" parent="InfoContainer/CaloriesInfo/KcalProgress"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 36.0
+offset_right = 79.0
+offset_bottom = 62.0
+text = "low kcal."
+label_settings = SubResource("LabelSettings_ilxqn")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="InfoContainer"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 183.0
+offset_right = 109.0
+offset_bottom = 211.0
+texture = SubResource("AtlasTexture_qxa3f")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="InfoContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 5.0
+offset_right = 62.0
+offset_bottom = 27.0
+text = "ready"
+label_settings = SubResource("LabelSettings_6mjct")
+
+[node name="Button" type="Button" parent="InfoContainer/NinePatchRect"]
+layout_mode = 0
+offset_right = 85.0
+offset_bottom = 28.0
+flat = true
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="InfoContainer"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 101.0
+offset_right = 109.0
+offset_bottom = 177.0
+texture = ExtResource("1_0xavl")
+region_rect = Rect2(1178, 388, 44, 26)
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="InfoContainer"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 112.0
+offset_right = 108.0
+offset_bottom = 169.0
+text = "Try to choose healthy food and not too less and also not too much!"
+label_settings = SubResource("LabelSettings_axgh2")
+autowrap_mode = 2
+
+[node name="ReadyButtonSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_ejcvw")
+bus = &"sfx"
+
+[node name="CheckboxSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_twx4e")
+bus = &"sfx"
+
+[connection signal="pressed" from="InfoContainer/NinePatchRect/Button" to="." method="_on_button_pressed"]
+
+[editable path="FoodplanContainer/ScrollContainer/FoodItemContainer/Yogurt"]
+[editable path="FoodplanContainer/ScrollContainer/FoodItemContainer/Chicken"]
+[editable path="FoodplanContainer/ScrollContainer/FoodItemContainer/Pastrami"]
+[editable path="FoodplanContainer/ScrollContainer/FoodItemContainer/Sushi"]
+[editable path="FoodplanContainer/ScrollContainer/FoodItemContainer/Soup"]
+[editable path="FoodplanContainer/ScrollContainer/FoodItemContainer/Toast"]
+[editable path="FoodplanContainer/ScrollContainer/FoodItemContainer/Salad"]
+[editable path="FoodplanContainer/ScrollContainer/FoodItemContainer/Melon"]
+[editable path="FoodplanContainer/ScrollContainer/FoodItemContainer/Fries"]
+[editable path="FoodplanContainer/ScrollContainer/FoodItemContainer/BakedPasta"]
+[editable path="FoodplanContainer/ScrollContainer/FoodItemContainer/Shake"]

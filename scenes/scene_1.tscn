@@ -1,0 +1,486 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwwf3j24ftryb"]
+
+[ext_resource type="Texture2D" uid="uid://0mxyffqf13xg" path="res://assets/textures/scene_1/city_pixelart1.png" id="1_6p1x2"]
+[ext_resource type="Script" path="res://scenes/scene_1.gd" id="1_thyaj"]
+[ext_resource type="Texture2D" uid="uid://b8kj3s8ckl5t2" path="res://assets/textures/scene_1/clouds.png" id="2_1eviq"]
+[ext_resource type="Texture2D" uid="uid://b2opusva3vt3e" path="res://assets/textures/scene_1/cars.png" id="2_m7dd6"]
+[ext_resource type="AudioStream" uid="uid://5wdamdu7r7wx" path="res://assets/audio/city_street.wav" id="3_3a3rf"]
+[ext_resource type="PackedScene" uid="uid://dom4h80i12t27" path="res://hud/border.tscn" id="7_y7ci8"]
+
+[sub_resource type="Animation" id="Animation_tsvmv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skyscraper/City_BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.8, 0.8, 0.8, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skyscraper/CarsFront/1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-42.5, 42)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skyscraper/CarsBack/4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-14, 85)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skyscraper/CarsFront/2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 42)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skyscraper/CarsFront/3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17, 42)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skyscraper/CarsBack/5:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, 84)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Skyscraper/CarsFront/4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-54.5, 42)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Skyscraper/CarsBack/6:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 84)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Skyscraper/CarsBack/7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(113, 84)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Skyscraper/City_BG:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Skyscraper/Clouds:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, -71)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Skyscraper:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_woi0s"]
+resource_name = "default"
+length = 5.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_3a3rf")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skyscraper/City_BG:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.8, 0.8, 0.8, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.776471, 0.776471, 0.776471, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skyscraper/CarsFront/1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-42.5, 42), Vector2(54.5, 42)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skyscraper/CarsBack/4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-14, 85), Vector2(-108, 84)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skyscraper/CarsFront/2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, 42), Vector2(56, 42)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skyscraper/CarsFront/3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(17, 42), Vector2(66, 42)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Skyscraper/CarsBack/5:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(79, 84), Vector2(-110, 84)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Skyscraper/CarsFront/4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-54.5, 42), Vector2(55.5, 42)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Skyscraper/CarsBack/6:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(112, 84), Vector2(112, 84), Vector2(-110, 84)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Skyscraper/CarsBack/7:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.5, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(113, 84), Vector2(-110, 84)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 4, 5, 6, 8, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Skyscraper/City_BG:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-92, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Skyscraper/Clouds:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 5.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(8, -71), Vector2(-382, -69)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Skyscraper:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s8sad"]
+_data = {
+"RESET": SubResource("Animation_tsvmv"),
+"default": SubResource("Animation_woi0s")
+}
+
+[node name="Scene1" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_thyaj")
+
+[node name="Skyscraper" type="Node2D" parent="."]
+
+[node name="City_BG" type="Sprite2D" parent="Skyscraper"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("1_6p1x2")
+hframes = 3
+frame = 2
+
+[node name="City_BG2" type="Sprite2D" parent="Skyscraper/City_BG"]
+position = Vector2(100, 0)
+texture = ExtResource("1_6p1x2")
+hframes = 3
+frame = 2
+
+[node name="City_BG3" type="Sprite2D" parent="Skyscraper/City_BG"]
+position = Vector2(100, 0)
+texture = ExtResource("1_6p1x2")
+hframes = 3
+frame = 2
+
+[node name="Clouds" type="Sprite2D" parent="Skyscraper"]
+position = Vector2(8, -71)
+scale = Vector2(2, 2)
+texture = ExtResource("2_1eviq")
+
+[node name="Clouds2" type="Sprite2D" parent="Skyscraper/Clouds"]
+position = Vector2(93, -3)
+texture = ExtResource("2_1eviq")
+
+[node name="Clouds3" type="Sprite2D" parent="Skyscraper/Clouds"]
+position = Vector2(186.5, -3)
+texture = ExtResource("2_1eviq")
+
+[node name="Buildings" type="Sprite2D" parent="Skyscraper"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_6p1x2")
+hframes = 3
+frame = 1
+
+[node name="Trees" type="Sprite2D" parent="Skyscraper"]
+z_index = 10
+scale = Vector2(2, 2)
+texture = ExtResource("1_6p1x2")
+hframes = 3
+
+[node name="CarsFront" type="Node2D" parent="Skyscraper"]
+z_index = 11
+scale = Vector2(2, 2)
+
+[node name="1" type="Sprite2D" parent="Skyscraper/CarsFront"]
+position = Vector2(-42.5, 42)
+texture = ExtResource("2_m7dd6")
+hframes = 4
+
+[node name="4" type="Sprite2D" parent="Skyscraper/CarsFront"]
+position = Vector2(-54.5, 42)
+texture = ExtResource("2_m7dd6")
+hframes = 4
+
+[node name="2" type="Sprite2D" parent="Skyscraper/CarsFront"]
+position = Vector2(4, 42)
+texture = ExtResource("2_m7dd6")
+hframes = 4
+frame = 1
+
+[node name="3" type="Sprite2D" parent="Skyscraper/CarsFront"]
+position = Vector2(17, 42)
+texture = ExtResource("2_m7dd6")
+hframes = 4
+frame = 2
+
+[node name="CarsBack" type="Node2D" parent="Skyscraper"]
+z_index = 9
+
+[node name="4" type="Sprite2D" parent="Skyscraper/CarsBack"]
+position = Vector2(-14, 85)
+scale = Vector2(2, 2)
+texture = ExtResource("2_m7dd6")
+hframes = 4
+frame = 2
+
+[node name="7" type="Sprite2D" parent="Skyscraper/CarsBack"]
+position = Vector2(113, 84)
+scale = Vector2(2, 2)
+texture = ExtResource("2_m7dd6")
+hframes = 4
+frame = 2
+
+[node name="5" type="Sprite2D" parent="Skyscraper/CarsBack"]
+position = Vector2(79, 84)
+scale = Vector2(2, 2)
+texture = ExtResource("2_m7dd6")
+hframes = 4
+frame = 3
+
+[node name="6" type="Sprite2D" parent="Skyscraper/CarsBack"]
+position = Vector2(8, 84)
+scale = Vector2(2, 2)
+texture = ExtResource("2_m7dd6")
+hframes = 4
+frame = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_s8sad")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Border" parent="CanvasLayer2" instance=ExtResource("7_y7ci8")]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

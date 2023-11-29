@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3o5b6re7ev42"]
+
+[ext_resource type="PackedScene" uid="uid://dtkbikbjojebd" path="res://characters/character.tscn" id="1_pq5qf"]
+[ext_resource type="Texture2D" uid="uid://di87rxl70bghl" path="res://assets/textures/characters/Tina_spritesheet.png" id="2_e6ixt"]
+
+[node name="Tina" instance=ExtResource("1_pq5qf")]
+
+[node name="Spritesheet" parent="." index="1"]
+texture = ExtResource("2_e6ixt")

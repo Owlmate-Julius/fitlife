@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1ine47jsm6a3"]
+
+[ext_resource type="PackedScene" uid="uid://bc8dxum66qnjp" path="res://Interactables/Interactable.tscn" id="1_kyc7f"]
+
+[node name="Treadmill" instance=ExtResource("1_kyc7f")]
+character_animation_name = "walk_up"

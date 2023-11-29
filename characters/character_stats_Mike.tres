@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=3 format=3 uid="uid://dihw7b0dkpcj6"]
+
+[ext_resource type="Script" path="res://characters/character_stats.gd" id="1_dy8cm"]
+[ext_resource type="Texture2D" uid="uid://t3876v2r0iet" path="res://assets/textures/characters/mike_portrait.png" id="1_he10u"]
+
+[resource]
+script = ExtResource("1_dy8cm")
+name = "Mike"
+gender = 0
+age = 55
+weight = 155
+motivation = 0
+fitness_experience = 12
+image = ExtResource("1_he10u")
+target_weight = 30

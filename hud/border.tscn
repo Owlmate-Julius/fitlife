@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dom4h80i12t27"]
+
+[ext_resource type="Script" path="res://hud/border.gd" id="1_bcceq"]
+[ext_resource type="Texture2D" uid="uid://cidj2xygmc157" path="res://assets/textures/hud/black.png" id="2_2lnb7"]
+
+[node name="Border" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bcceq")
+dimension = Vector2(200, 200)
+
+[node name="Top" type="TextureRect" parent="."]
+z_index = 999
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 35.0
+grow_horizontal = 2
+texture = ExtResource("2_2lnb7")
+
+[node name="Bottom" type="TextureRect" parent="."]
+z_index = 999
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_2lnb7")
+
+[node name="Right" type="TextureRect" parent="."]
+z_index = 999
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_2lnb7")
+
+[node name="Left" type="TextureRect" parent="."]
+z_index = 999
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 140.0
+grow_vertical = 2
+texture = ExtResource("2_2lnb7")

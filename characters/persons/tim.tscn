@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dat4hmydyl7wb"]
+
+[ext_resource type="PackedScene" uid="uid://dtkbikbjojebd" path="res://characters/character.tscn" id="1_kyrxa"]
+[ext_resource type="Texture2D" uid="uid://bttxgry54kcdi" path="res://assets/textures/characters/char2.png" id="2_kbhjr"]
+
+[node name="Tim" instance=ExtResource("1_kyrxa")]
+
+[node name="Spritesheet" parent="." index="1"]
+texture = ExtResource("2_kbhjr")

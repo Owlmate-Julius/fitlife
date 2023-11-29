@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=3 format=3 uid="uid://dp60ek1g3nwmq"]
+
+[ext_resource type="Texture2D" uid="uid://br1pga887ywxt" path="res://assets/textures/characters/lenny_portrait.png" id="1_dopag"]
+[ext_resource type="Script" path="res://characters/character_stats.gd" id="1_prcal"]
+
+[resource]
+script = ExtResource("1_prcal")
+name = "Lenny"
+gender = 0
+age = 28
+weight = 160
+motivation = 1
+fitness_experience = 60
+image = ExtResource("1_dopag")
+target_weight = 35
